@@ -19,12 +19,14 @@ Content-Type: application/json
     "completed": false
 }
 
-### Update a Todo
+### Update a Todo, insert whatever fields you would
+# like to see in the todo
 PUT {{baseUrl}}/api/v1/todos/1
 Content-Type: application/json
 
 {
-    "title": "updated title"
+    "title": "updated title",
+    "description": "this is an updated todo"
 }
 
 ### Delete a Todo
