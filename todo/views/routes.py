@@ -64,11 +64,13 @@ def create_todo():
 
     # Request is malformed
     if todo.title is None:
-        exit(400)
+        return jsonify({'error' : 'Malformed Request'}), 400
+        # exit(400)
 
     # If there are invalid keys, exit, request is malformed
     if set(request.json.keys()) - valid_keys:
-        exit(400)
+        return jsonify({'error' : 'Malformed Request'}), 400
+        # exit(400)
 
     # Adds a new record to the database or will update an existing record.
     db.session.add(todo)
